@@ -1,0 +1,3 @@
+<qbean name="qtest" logger="Q2" realm="qtest" class="com.sample.QTest2">
+
+</qbean>

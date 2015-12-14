@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+// apply plugin: 'docker'
+
+buildscript {
+    repositories { jcenter() }
+//    dependencies {
+//        classpath 'se.transmode.gradle:gradle-docker:1.2'
+//    }
+}
+
+group = 'org.jpos.template'
+version = '1.0.0'
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+    maven {url 'http://download.oracle.com/maven'}
+    maven {url 'http://jline.sourceforge.net/m2repo'}
+    maven {url 'http://jpos.org/maven' }
+    mavenLocal()
+}
+
+dependencies {
+    compile ('org.jpos:jpos:1.9.8') {
+        exclude(module: 'junit')
+        exclude(module: 'hamcrest-core')
+    }
+    compile 'org.codehaus.groovy:groovy-all:2.1.6'
+    testCompile 'junit:junit:4.8.2'
+}
+
+apply from: 'jpos-app.gradle'
+
+
+task createDirs() {
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.groovy.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+
