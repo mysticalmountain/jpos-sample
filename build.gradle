@@ -31,6 +31,11 @@ dependencies {
         exclude(module: 'hamcrest-core')
     }
     compile 'org.codehaus.groovy:groovy-all:2.1.6'
+    compile 'com.sun.jersey:jersey-core:1.17.1'
+    compile 'com.sun.jersey:jersey-servlet:1.17.1'
+    compile 'com.sun.jersey:jersey-server:1.17.1'
+    compile 'org.eclipse.jetty:jetty-server:8.1.0.RC5'
+    compile 'org.eclipse.jetty:jetty-servlet:8.1.0.RC5'
     testCompile 'junit:junit:4.8.2'
 }
 

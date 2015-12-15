@@ -1,0 +1,7 @@
+<server name="server" class="org.jpos.q2.iso.QServer" logger="Q2">
+    <attr name="port" type="java.lang.Integer">10000</attr>
+    <channel realm="server-channel" logger="Q2" class="org.jpos.iso.channel.XMLChannel" packager="org.jpos.iso.packager.XMLPackager">
+    </channel>
+    <request-listener class="com.sample.server.ISOServer" logger="Q2" realm="request-listener">
+    </request-listener>
+</server>

@@ -1,4 +1,4 @@
-package com.sample;
+package com.sample.qbean;
 
 import org.jpos.core.Configuration;
 import org.jpos.core.ConfigurationException;
@@ -11,12 +11,12 @@ import org.jpos.util.Log;
  * User: andongxu
  * Time: 15-12-14 下午4:46
  */
-public class QTest2 extends QBeanSupport {
+public class QTest extends QBeanSupport {
 
     private Log log;
     private volatile int state;
 
-    public QTest2() {
+    public QTest() {
         state = -1;
         log = Log.getLog(Q2.LOGGER_NAME, "QTEST");
         log.info("constructor");
